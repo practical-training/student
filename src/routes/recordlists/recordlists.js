@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
-import styles from '../recordlists.css';
+import styles from './css/recordlists.css';
 
 import { Table } from 'antd';
 import { node } from 'prop-types';
@@ -171,13 +171,14 @@ function IndexPage() {
 IndexPage.propTypes = {
 };
 
-axios.get('http://127.0.0.1:9001/emstu/student/recordlists',{
-  params: {
-    'cid': '000000000005'
-  }
-}).then((res)=>{
-  console.log(res)
+
+// axios.get('http://127.0.0.1:9001/emstu/student/recordlists',{
+//   params: {
+//     'cid': '000000000005'
+//   }
+// }).then((res)=>{
+//   console.log(res)
   
-})
+// })
 
 export default connect()(IndexPage);

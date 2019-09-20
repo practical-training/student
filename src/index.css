@@ -8,5 +8,8 @@ html, body, :global(#root) {
   padding: 0;
   list-style: none;
   text-decoration: none;
+  /* font-size: calc(100/750*100vw); */
+  padding: 0;
+  margin:0;
 }
 

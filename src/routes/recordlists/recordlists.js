@@ -177,6 +177,7 @@ axios.get('http://127.0.0.1:9001/emstu/student/recordlists',{
   }
 }).then((res)=>{
   console.log(res)
+  
 })
 
 export default connect()(IndexPage);

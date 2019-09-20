@@ -1,8 +1,10 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { connect } from "dva";
 import style from "./index.css";
 import Header from "../../components/header";
-import { login } from "../../services/login";
+import { login, register } from "../../services/login";
+import { message } from "antd";
+import "antd/dist/antd.css";
 
 function Login(props) {
   //下标
@@ -10,24 +12,37 @@ function Login(props) {
   //btn内容
   let [con, setCon] = useState("登入");
   //用户
-  let [username, setUsername] = useState("");
+  let [username, setUsername] = useState("lisi");
   //密码
-  let [password, setPassword] = useState("");
+  let [password, setPassword] = useState("123456");
   //手机号
   let [phone, setPhone] = useState("");
   //选择
-
+  let [choose, setchoose] = useState(false);
+  let [validlength, setValidlength] = useState();
   let arr = ["登入", "注册"];
 
+  //登录
   let handleBtn = async () => {
     if (con === "登入") {
-      const result = await login({username,password});
-      console.log(result);
-      if(result.code===1){
-
-      }else{
-
+      if (choose === true) {
+        setValidlength(24 * 14);
+        const result = await login({ username, password, validlength });
+        if (result.code === 1) {
+          message.info(result.msg);
+          props.history.push("/principal");
+        } else {
+          message.info(result.msg);
+        }
+      } else {
+        const result = await login({ username, password });
+        message.info(result.msg);
+        props.history.push("/principal");
       }
+    }
+    if (con === "注册") {
+      const result = await register({ username, password, phone });
+      message.info(result.msg);
     }
   };
   return (
@@ -77,7 +92,12 @@ function Login(props) {
             </div>
           ) : (
             <div className={style.rember}>
-              <input type="checkbox" id="rember" />
+              <input
+                type="checkbox"
+                id="rember"
+                checked={choose}
+                onChange={e => setchoose(e.target.checked)}
+              />
               <label htmlFor="rember">两周内自动登录</label>
             </div>
           )}

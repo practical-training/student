@@ -1,29 +1,23 @@
 import React from 'react';
 import { connect } from 'dva';
 import styles from './css/recordlists.css';
-
 import { Table } from 'antd';
 import { node } from 'prop-types';
 import axios from 'axios'
+import { recordlists} from "../../services/recordlists/recordlists";
 
-// {
-//   "record_id": "00001",
-//   "record_date": "2019-08-23",
-//   "stuid": 5,
-//   "skill_score": 88,
-//   "theory_score": null,
-//   "analysis": null,
-//   "assistant_way": null,
-//   "assistant_person": null,
-//   "week_record": null,
-//   "status": 1
-// }
+let handleBtn = async () => {
+    const result = await recordlists({cid:'00001'});
+    console.log(result);
+  return result
+};
+console.log(handleBtn())
+
 const columns = [
   {
     title: '序号',
-    dataIndex: 'age',
+    dataIndex: 'key',
     defaultSortOrder: 'descend',
-    sorter: (a, b) => a.age - b.age,
   },
   {
     title: '日期',
@@ -33,21 +27,21 @@ const columns = [
   },
   {
     title: '理论',
-    dataIndex: 'age',
+    dataIndex: 'skill_score',
     defaultSortOrder: 'descend',
-    sorter: (a, b) => a.age - b.age,
+  
   },
   {
     title: '技能',
     dataIndex: 'theory_score',
     defaultSortOrder: 'descend',
-    sorter: (a, b) => a.age - b.age,
+  
   },
   {
     title: '分析和解决',
     dataIndex: 'assistant_person',
     defaultSortOrder: 'descend',
-    sorter: (a, b) => a.age - b.age,
+  
   },
   {
     title: '是否周考',
@@ -90,12 +84,12 @@ const columns = [
     dataIndex: 'address',
     filters: [
       {
-        text: 'London',
-        value: 'London',
+        text: '编辑',
+        value: '编辑',
       },
       {
-        text: 'New York',
-        value: 'New York',
+        text: '删除',
+        value: '删除',
       },
     ],
     filterMultiple: false,
@@ -109,31 +103,39 @@ const columns = [
 const data = [
   {
     key: '1',
-    name: 'John Brown',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
+    record_date:"2019-9-20",
+    skill_score: 32,
+    theory_score: 'fvghtyj',
+    assistant_person:'New York No. 1 Lake Park',
+    week_record:"是",
+    address:['编辑','删除']
   },
   {
     key: '2',
-    name: 'Jim Green',
-    name: 'John Brown',
-    age: 42,
-    address: 'London No. 1 Lake Park',
+    record_date:"2019-9-20",
+    skill_score: 42,
+    theory_score: 'asdfgasd',
+    assistant_person:'New York No. 1 Lake Park',
+    week_record:"是",
+    address:['编辑','删除']
   },
   {
     key: '3',
-    name: 'Joe Black',
-    name: 'John Brown',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
+    record_date:"2019-9-20",
+    skill_score: 32,
+    theory_score: 'London No. 1 Lake Park',
+    assistant_person:'New York No. 1 Lake Park',
+    week_record:"是",
+    address:['编辑','删除']
   },
   {
     key: '4',
-    name: 'Jim Red',
-     name: 'John Brown',
-    age: 32,
-    address: 'London No. 2 Lake Park',
+    record_date:"2019-9-20",
+    skill_score: 32,
+    theory_score: 'London No. 2 Lake Park',
+    assistant_person:'New York No. 1 Lake Park',
+    week_record:"是",
+    address:['编辑','删除']
   },
 ];
 
@@ -141,7 +143,7 @@ function onChange(pagination, filters, sorter) {
   console.log('params', pagination, filters, sorter);
 }
 
-
+handleBtn()
 function IndexPage() {
   return (
     <div className={styles.content}>
@@ -153,8 +155,8 @@ function IndexPage() {
       </div>
       <div className={styles.tab}>
         <div className={styles.tabNav}>
-          <p>11 :<span>11</span></p>
-          <p>22 :<span>22</span></p>
+          <p>讲师 :<span>xx</span></p>
+          <p>学生 :<span>xx</span></p>
           <div className={styles.inputs}>
           <input text="text" placeholder="快捷选择其他学生"/>
           <span>x</span>
@@ -173,9 +175,7 @@ IndexPage.propTypes = {
 
 
 // axios.get('http://127.0.0.1:9001/emstu/student/recordlists',{
-//   params: {
-//     'cid': '000000000005'
-//   }
+ 
 // }).then((res)=>{
 //   console.log(res)
   

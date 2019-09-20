@@ -1,5 +1,7 @@
 import request from '../../utils/request';
 
-export function recordlists() {
-  return request('http://{{hp}}/emstu/student/recordlists');
-}
+//成绩
+export const recordlists = params => {
+  console.log(params)
+  return request.get("/api/emstu/student/recordlists", params);
+};

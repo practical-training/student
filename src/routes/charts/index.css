@@ -1,0 +1,103 @@
+/*小屏幕*/
+@media screen and (max-width: 768px) {
+  .wrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+  }
+  .header {
+    height: calc(1rem);
+    line-height: calc(0.41rem);
+    background-color: rgba(0, 118, 255, 1);
+    color: rgba(255, 255, 255, 1);
+    font-size: calc(0.28rem);
+    text-align: center;
+    font-family: Roboto;
+    border: 1px solid rgba(187, 187, 187, 1);
+  }
+  .nav {
+    height: calc(2.01rem);
+    line-height: calc(0.2rem);
+    text-align: center;
+    margin-top: calc(0.21rem);
+    border: 1px solid rgba(187, 187, 187, 1);
+  }
+}
+/*大屏幕，或者宽屏*/
+@media screen and (min-width: 768px) {
+  .wrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+  }
+  .header {
+    height: 100px;
+    line-height: 41px;
+    background-color: rgba(0, 118, 255, 1);
+    color: rgba(255, 255, 255, 1);
+    font-size: 28px;
+    text-align: center;
+    font-family: Roboto;
+    border: 1px solid rgba(187, 187, 187, 1);
+  }
+  .nav {
+    height: 202px;
+    line-height: 20px;
+    margin-top: 21px;
+    border: 1px solid rgba(187, 187, 187, 1);
+    display: flex;
+    flex-direction: column;
+  }
+  .tabclass {
+    height: 75%;
+    display: flex;
+  }
+  .bot {
+    height: 25%;
+    display: flex;
+  }
+  .choose {
+    width: 8%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+  }
+  .list {
+    width: 92%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .list span {
+    width: 94px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 4px;
+    background-color: rgba(230, 241, 252, 1);
+    text-align: center;
+    border: 1px solid rgba(163, 208, 253, 1);
+    margin: 15px;
+  }
+  .list span.active {
+    background-color: rgba(24, 144, 255, 1);
+    color: #fff;
+  }
+  .botPro {
+    width: 77%;
+    display: flex;
+    align-items: center;
+  }
+  .botPro span {
+    width: 60px;
+    height: 40px;
+    line-height: 40px;
+  }
+  .switch {
+    width: 15%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+}

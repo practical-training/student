@@ -8,8 +8,11 @@
   },
   "dependencies": {
     "dva": "^2.4.1",
+    "echarts": "^4.3.0",
+    "echarts-for-react": "^2.0.15-beta.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-echarts3": "^0.1.2"
   },
   "devDependencies": {
     "antd": "^3.23.3",

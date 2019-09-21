@@ -1,4 +1,125 @@
 
+
+@media screen and (max-width: 768px) {
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+ 
+}
+.content .nav{
+  width: 100%;
+  height: 1rem;
+  left: 0.06rem;
+  top: 0.08rem;
+  z-index: 10;
+  color: rgb(255, 255, 255);
+  background-color: rgb(63, 81, 181);
+  font-size: 0.14rem;
+  text-align: center;
+  opacity: 1;
+}
+.content .nav p{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 1rem;
+  font-size: 0.28rem;
+}
+.content .tab{
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.content .tab .tabNav{
+    width: 90%;
+    height:1rem;
+    margin: 0.2rem 5% 0 5%;
+    z-index: 5;
+    font-size: 0.12rem;
+    padding: 0rem;
+    border:0.01rem solid #ccc;
+    line-height: 0.2rem;
+    opacity: 1;
+    display: flex;
+}
+.content .tab .tabNav p{
+  width: 0.7rem;
+  height: 100%;
+  line-height: 1rem;
+  text-align: center;
+}
+.content .tab .tabNav .inputs{
+  height: 100%;
+  flex: 1;
+  position: relative;
+}
+.content .tab .tabNav .inputs input{
+  width: 1.14rem;
+  height: 0.4rem;
+  position: absolute;
+  right: 0.1rem;
+  top: 0.12rem;
+  padding-left: 0.1rem;
+  border: 0.01rem solid #ccc;
+  border-radius: 0.05rem;
+  font-size: 0.06rem;
+  -webkit-border-radius: 0.05rem;
+  -moz-border-radius: 0.05rem;
+  -ms-border-radius: 0.05rem;
+  -o-border-radius: 0.05rem;
+}
+.content .tab .tabNav .inputs span{
+  width: 0.1rem;
+  height: 0.1rem;
+  border: 0.01rem solid #ccc;
+  text-align: center;
+  line-height: 0.1rem;
+  border-radius:50%;
+  position: absolute;
+  right: 0.15rem;
+  top: 0.15rem;
+}
+.content .tab .tabBody{
+  width: 90%;
+  height: 3rem;
+  margin: 0.2rem 5% 0 5%;
+  z-index: 5;
+  font-size: 0.06rem;
+  border-width: 0.01rem;
+  border-style: solid;
+  line-height: 0.2rem;
+  font-weight: normal;
+  font-style: normal;
+  opacity: 1;
+  overflow-y: auto;
+}
+.content .tab .tabBody .ant-table-wrapper{
+  width: 100%;
+  height: 100%;
+  font-size: 0.06rem;
+}
+
+}
+/* @media screen and (min-width: 768px) and (max-width: 992px){
+  .content {
+      width: 100%;
+      height: 100%;
+      background-color: green;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1200px){
+  .content {
+      width: 100%;
+      height: 100%;
+    
+  }
+} */
+/* 宽 */
+@media screen and (min-width: 768px) {
+ 
 .content {
   width: 100%;
   height: 100%;
@@ -101,133 +222,4 @@
   opacity: 1;
   overflow-y: auto;
 }
-
-@media screen and (max-width: 768px) {
-.content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
- 
 }
-.content .nav{
-  width: 100%;
-  height: 100rem;
-  left: 6px;
-  top: 8px;
-  z-index: 10;
-  color: rgb(255, 255, 255);
-  background-color: rgb(63, 81, 181);
-  font-size: 14px;
-  padding: 0px;
-  border-width: 1px;
-  border-style: solid;
-  text-align: center;
-  font-weight: normal;
-  font-style: normal;
-  opacity: 1;
-}
-.content .nav p{
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  line-height: 100rem;
-  font-size: 28rem;
-}
-.content .tab{
-  width: 100%;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.content .tab .tabNav{
-    width: 90%;
-    height:100rem;
-    /* left: 10%;
-    top: 20px; */
-    margin: 20px 5% 0 5%;
-    z-index: 5;
-    font-size: 12rem;
-    padding: 0px;
-    border-width: 1px;
-    border-style: solid;
-    line-height: 20px;
-    font-weight: normal;
-    font-style: normal;
-    opacity: 1;
-    display: flex;
-}
-.content .tab .tabNav p{
-  width: 70px;
-  height: 100%;
-  line-height: 100rem;
-  text-align: center;
-}
-.content .tab .tabNav .inputs{
-  height: 100%;
-  flex: 1;
-  position: relative;
-}
-.content .tab .tabNav .inputs input{
-  width: 114px;
-  height: 40rem;
-  position: absolute;
-  right: 10px;
-  top: 12px;
-  padding-left: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 6px;
-}
-.content .tab .tabNav .inputs span{
-  width: 10px;
-  height: 10px;
-  border: 1px solid #ccc;
-  text-align: center;
-  line-height: 10px;
-  border-radius:50%;
-  position: absolute;
-  right: 15px;
-  top: 15px;
-}
-.content .tab .tabBody{
-  width: 90%;
-  height: 300px;
-  margin: 20px 5% 0 5%;
-  z-index: 5;
-  font-size: 6px;
-  padding: 0px;
-  border-width: 1px;
-  border-style: solid;
-  line-height: 20px;
-  font-weight: normal;
-  font-style: normal;
-  opacity: 1;
-  overflow-y: auto;
-}
-.content .tab .tabBody .ant-table-wrapper{
-  font-size: 6px;
-}
-
-}
-/* @media screen and (min-width: 768px) and (max-width: 992px){
-  .content {
-      width: 100%;
-      height: 100%;
-      background-color: green;
-  }
-}
-@media screen and (min-width: 992px) and (max-width: 1200px){
-  .content {
-      width: 100%;
-      height: 100%;
-    
-  }
-} */
-/* @media screen and (min-width: 1200px) {
-  .content {
-      width: 100%;
-      height: 100%;
-      background-color: yellow;
-  }
-} */

@@ -6,16 +6,17 @@
   }
   :global .warper {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     font-size: 14px;
   }
   :global .warper header {
     width: 100%;
-    height: 100px;
+    height: 80px;
     background: #0076ff;
     text-align: center;
-    line-height: 100px;
+    line-height: 80px;
     font-size: 28px;
     color: #fff;
   }
@@ -27,7 +28,7 @@
   }
   :global .warper .content .tabclass {
     width: 100%;
-    height: 126px;
+    height: 90px;
     display: flex;
     border: 1px solid #bbbbbb;
     margin-top: 21px;
@@ -41,7 +42,7 @@
   :global .warper .content .tabclass span:nth-child(2) {
     display: flex;
     width: 103px;
-    height: 50px;
+    height: 30px;
     background: #0076ff;
     margin-right: 20px;
     border-radius: 2px;
@@ -50,11 +51,10 @@
     color: #fff;
     margin-right: 20px;
   }
-  :global .warper .content .tabclass span:nth-child(3),
-  :global .warper .content .tabclass :nth-child(4) {
+  :global .warper .content .tabclass span:nth-child(3) {
     display: flex;
     width: 90px;
-    height: 50px;
+    height: 30px;
     background: #e6f1fc;
     color: #a3d0fd;
     border: 1px solid #a3d0fd;
@@ -65,7 +65,7 @@
   }
   :global .warper .content .add {
     width: 100%;
-    height: 90px;
+    height: 70px;
     display: flex;
     align-items: center;
   }
@@ -76,7 +76,7 @@
     display: flex;
     margin: 0 26px;
     width: 240px;
-    height: 40px;
+    height: 30px;
     border: 1px solid #DCDFE6;
     align-items: center;
     text-align: center;
@@ -86,7 +86,7 @@
   }
   :global .warper .content .add .addbtn {
     width: 95px;
-    height: 40px;
+    height: 30px;
     display: flex;
     color: #a3d0fd;
     background: #e6f1fc;
@@ -97,12 +97,17 @@
   }
   :global .warper .content .wire {
     width: 100%;
-    height: 534px;
+    height: 440px;
+  }
+  :global .warper .content .wire #main {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
   }
   :global .warper .content .grade {
     padding: 0 18px;
     width: 100%;
-    height: 70px;
+    height: 50px;
     background: #f2f1f1;
     display: flex;
     align-items: center;
@@ -113,7 +118,7 @@
   }
   :global .warper .content .grade span:nth-child(1) {
     width: 105px;
-    height: 35px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,182 +126,98 @@
   }
   :global .warper .content .grade span:nth-child(2) {
     width: 159px;
-    height: 35px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   :global .warper .content .grade span:nth-child(3) {
     width: 214px;
-    height: 35px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 900px;
   }
-  :global .warper .content .piller {
+  :global .dialog {
     width: 100%;
-    height: 646px;
-    border: 1px solid #0076ff;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
   }
-  :global .warper .content .piller .pillerbox {
-    flex: 1;
-  }
-  :global .warper .content .piller .grade {
-    padding: 0 18px;
-    width: 100%;
-    height: 70px;
-    background: #f2f1f1;
-    display: flex;
-    align-items: center;
-  }
-  :global .warper .content .piller .grade span {
-    border: 1px solid #BBBBBB;
-    font-size: 14px;
-  }
-  :global .warper .content .piller .grade span:nth-child(1) {
-    width: 105px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 16px;
-  }
-  :global .warper .content .piller .grade span:nth-child(2) {
-    width: 159px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  :global .warper .content .piller .grade span:nth-child(3) {
-    width: 214px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 900px;
-  }
-  :global .warper .content .box {
-    flex: 1;
-    margin-bottom: 29px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-  :global .warper .content .box .leftbox {
+  :global .dialog .addstudent {
+    border-radius: 4px 4px 4px 4px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.2);
     width: 483px;
     height: 353px;
-    padding: 0 22px;
-    border-radius: 4px 4px 4px 4px;
-    background-color: white;
-    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.2);
-  }
-  :global .warper .content .box .leftbox .tit {
-    margin: 24px 0 50px 24px;
-  }
-  :global .warper .content .box .leftbox .iptbox {
-    width: 439px;
-    height: 180px;
-    margin: 0 22px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 22px;
     display: flex;
     flex-direction: column;
-    padding: 0 37px;
+    background: #fff;
   }
-  :global .warper .content .box .leftbox .iptbox p:nth-child(1) {
-    width: 100%;
-    height: 40px;
+  :global .dialog .addstudent .tit {
+    margin-bottom: 50px;
+    text-align: left;
+  }
+  :global .dialog .addstudent .iptbox {
+    width: 440px;
+    height: 180px;
+    padding: 0 38px;
+    display: flex;
+    flex-direction: column;
+  }
+  :global .dialog .addstudent .iptbox p {
+    flex: 1;
+    margin-bottom: 20px;
     display: flex;
   }
-  :global .warper .content .box .leftbox .iptbox p:nth-child(1) input {
-    width: 272px;
-    height: 40px;
-    border: 1px solid #dcdfe6;
-  }
-  :global .warper .content .box .leftbox .iptbox p:nth-child(1) button {
-    flex: 1;
-    background: #e6f1fc;
-    border: 1px solid #a3d0fd;
-    color: #a3d0fd;
-  }
-  :global .warper .content .box .leftbox .iptbox p:nth-child(2), :global .warper .content .box .leftbox .iptbox p:nth-child(3) {
-    margin: 18px 0;
-    width: 100%;
-    height: 40px;
-    display: flex;
-  }
-  :global .warper .content .box .leftbox .iptbox p:nth-child(2) span, :global .warper .content .box .leftbox .iptbox p:nth-child(3) span {
-    flex: 1;
+  :global .dialog .addstudent .iptbox p span {
+    width: 80px;
+    height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
-  :global .warper .content .box .leftbox .iptbox p:nth-child(2) input, :global .warper .content .box .leftbox .iptbox p:nth-child(3) input {
-    width: 297px;
-    height: 40px;
+  :global .dialog .addstudent .iptbox p input {
+    flex: 1;
     border: 1px solid #dcdfe6;
-    padding-left: 6px;
   }
-  :global .warper .content .box .leftbox .btnbox {
+  :global .dialog .addstudent .iptbox p:nth-child(1) span {
+    border-radius: 4px 4px 4px 4px;
+    background-color: #e6f1fc;
+    border: 1px solid #a3d0fd;
+  }
+  :global .dialog .addstudent .btnbox {
     width: 100%;
-    height: 26px;
-    margin-top: 36px;
+    height: 36px;
     display: flex;
     justify-content: flex-end;
+    align-items: flex-end;
   }
-  :global .warper .content .box .leftbox .btnbox .clearbtn {
+  :global .dialog .addstudent .btnbox button {
     width: 65px;
-    height: 36px;
-    margin-right: 8px;
-    border: 1px solid #d9d9d9;
-    border-radius: 4px;
+    height: 100%;
+    border: 1px solid #dcdfe6;
   }
-  :global .warper .content .box .leftbox .btnbox .surebtn {
-    width: 65px;
-    height: 36px;
-    border: 0;
-    background: #0076ff;
-    color: #fff;
-    border-radius: 4px;
-  }
-  :global .warper .content .box .rightbox {
-    width: 483px;
-    height: 421px;
+  :global .dialog .addstudent .btnbox button:nth-child(1) {
     border-radius: 4px 4px 4px 4px;
-    background-color: white;
-    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.2);
-    padding: 0 22px;
-    padding: 20px 60px;
+    border: 1px solid #dcdfe6;
+    background: #fff;
+    margin-right: 10px;
   }
-  :global .warper .content .box .rightbox .tit {
-    margin: 24px 0 50px 24px;
-    margin-left: -30px;
-  }
-  :global .warper .content .box .rightbox p {
-    width: 70%;
-    margin: 0 auto;
-    display: flex;
-    margin-bottom: 10px;
-    margin-top: 10px;
-  }
-  :global .warper .content .box .rightbox p span {
-    flex: 1;
-  }
-  :global .warper .content .box .rightbox p span input {
-    width: 100%;
-    height: 35px;
-  }
-  :global .warper .content .box .rightbox p span textarea {
-    width: 100%;
-    height: 80px;
-  }
-  :global .warper .content .box .rightbox p b {
-    width: 80px;
-  }
-  :global .warper .content .box .rightbox p b button {
-    width: 100%;
+  :global .dialog .addstudent .btnbox button:nth-child(2) {
+    border-radius: 4px 4px 4px 4px;
+    color: #fff;
+    background-color: #e6f1fc;
+    border: 1px solid #a3d0fd;
   }
 }
 
@@ -306,7 +227,8 @@
     margin: 0;
     box-sizing: border-box;
   }
-  :global html, :global body {
+  :global html,
+  :global body {
     width: 100%;
     height: 100%;
   }
@@ -326,7 +248,7 @@
     background: #0076ff;
     text-align: center;
     line-height: calc(0.6rem);
-    font-size: calc(0.20rem);
+    font-size: calc(0.2rem);
     color: #fff;
   }
   :global .warper .content {
@@ -358,8 +280,7 @@
     margin-right: calc(0.1rem);
     padding: calc(0.04rem);
   }
-  :global .warper .content .tabclass span:nth-child(3),
-  :global .warper .content .tabclass :nth-child(4) {
+  :global .warper .content .tabclass span:nth-child(3) {
     padding: calc(0.04rem);
     display: flex;
     background: #e6f1fc;
@@ -368,32 +289,37 @@
     border-radius: 2px;
     align-items: center;
     justify-content: center;
-    margin-right: calc(0.20rem);
+    margin-right: calc(0.2rem);
   }
   :global .warper .content .add {
     width: 100%;
-    height: calc(0.45rem);
+    height: calc(1.6rem);
     display: flex;
+    flex-direction: column;
     align-items: center;
+    margin: 10px 0;
+    justify-content: center;
   }
   :global .warper .content .add span {
-    margin-left: calc(0.1rem);
+    width: 100%;
+    height: calc(0.3rem);
+    line-height: 30px;
+    text-align: center;
   }
   :global .warper .content .add input {
-    display: flex;
-    margin: 0 calc(0.05rem);
-    width: calc(0.6rem);
-    height: calc(0.2rem);
+    flex: 1;
+    width: 80%;
     border: 1px solid #DCDFE6;
     align-items: center;
     text-align: center;
+    margin: 4px auto;
   }
   :global .warper .content .add .useript {
     text-align: left;
   }
   :global .warper .content .add .addbtn {
-    width: calc(0.45rem);
-    height: calc(0.2rem);
+    flex: 1;
+    padding: 2px 15px;
     display: flex;
     color: #a3d0fd;
     background: #e6f1fc;
@@ -404,8 +330,11 @@
   }
   :global .warper .content .wire {
     width: 100%;
-    height: calc(2.65rem);
-    background: #0076ff;
+    height: calc(3rem);
+  }
+  :global .warper .content .wire #main {
+    width: 100%;
+    height: 100%;
   }
   :global .warper .content .grade {
     padding: 0 calc(0.09rem);
@@ -435,161 +364,67 @@
     align-items: center;
     justify-content: center;
   }
-  :global .warper .content .piller {
+  :global .warper .dialog {
     width: 100%;
-    height: calc(3.23rem);
-    border: 1px solid #0076ff;
-    margin-top: calc(0.1rem);
-    display: flex;
-    flex-direction: column;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
   }
-  :global .warper .content .piller .pillerbox {
-    flex: 1;
-  }
-  :global .warper .content .piller .grade {
-    padding: 0 calc(0.09rem);
-    width: 100%;
-    height: calc(0.35rem);
-    background: #f2f1f1;
-    display: flex;
-    align-items: center;
-  }
-  :global .warper .content .piller .grade span {
-    border: 1px solid #BBBBBB;
-    font-size: calc(0.14rem);
-  }
-  :global .warper .content .piller .grade span:nth-child(1) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: calc(0.16rem);
-  }
-  :global .warper .content .piller .grade span:nth-child(2) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  :global .warper .content .piller .grade span:nth-child(3) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  :global .warper .content .box {
-    flex: 1;
-    margin-bottom: calc(0.29rem);
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-  :global .warper .content .box .leftbox {
-    width: calc(4.83rem);
-    height: calc(3.53rem);
-    padding: 0 calc(0.22rem);
+  :global .warper .dialog .addstudent {
     border-radius: 4px 4px 4px 4px;
     background-color: white;
+    text-align: center;
     box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.2);
-  }
-  :global .warper .content .box .leftbox .tit {
-    margin: calc(0.24rem) 0 calc(0.5rem) calc(0.24rem);
-  }
-  :global .warper .content .box .leftbox .iptbox {
-    width: calc(4.39rem);
-    height: calc(1.8rem);
-    margin: 0 calc(0.22rem);
+    width: calc(2.4rem);
+    height: calc(2rem);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: calc(0.05rem) calc(0.11rem);
     display: flex;
     flex-direction: column;
-    padding: 0 calc(0.37rem);
+    background: #fff;
   }
-  :global .warper .content .box .leftbox .iptbox p:nth-child(1) {
-    width: 100%;
-    height: calc(0.4rem);
-    display: flex;
+  :global .warper .dialog .addstudent .tit {
+    margin-bottom: calc(0.1rem);
+    text-align: left;
   }
-  :global .warper .content .box .leftbox .iptbox p:nth-child(1) input {
-    width: calc(2.72rem);
-    height: calc(0.4rem);
+  :global .warper .dialog .addstudent .iptbox p {
+    flex: 1;
+  }
+  :global .warper .dialog .addstudent .iptbox p input {
     border: 1px solid #dcdfe6;
   }
-  :global .warper .content .box .leftbox .iptbox p:nth-child(1) button {
-    flex: 1;
-    background: #e6f1fc;
+  :global .warper .dialog .addstudent .iptbox p:nth-child(1) span {
+    border-radius: 4px 4px 4px 4px;
+    background-color: #e6f1fc;
     border: 1px solid #a3d0fd;
-    color: #a3d0fd;
   }
-  :global .warper .content .box .leftbox .iptbox p:nth-child(2), :global .warper .content .box .leftbox .iptbox p:nth-child(3) {
-    margin: calc(0.18rem) 0;
+  :global .warper .dialog .addstudent .btnbox {
     width: 100%;
-    height: calc(0.4rem);
-    display: flex;
-  }
-  :global .warper .content .box .leftbox .iptbox p:nth-child(2) span, :global .warper .content .box .leftbox .iptbox p:nth-child(3) span {
-    flex: 1;
-    display: flex;
-    align-items: center;
-  }
-  :global .warper .content .box .leftbox .iptbox p:nth-child(2) input, :global .warper .content .box .leftbox .iptbox p:nth-child(3) input {
-    width: calc(2.97rem);
-    height: calc(0.4rem);
-    border: 1px solid #dcdfe6;
-    padding-left: calc(0.06rem);
-  }
-  :global .warper .content .box .leftbox .btnbox {
-    width: 100%;
-    height: calc(0.26rem);
-    margin-top: calc(0.36rem);
+    height: calc(0.3rem);
     display: flex;
     justify-content: flex-end;
+    align-items: flex-end;
   }
-  :global .warper .content .box .leftbox .btnbox .clearbtn {
-    width: calc(0.65rem);
-    height: calc(0.36rem);
-    margin-right: calc(0.08rem);
-    border: 1px solid #d9d9d9;
-    border-radius: 4px;
+  :global .warper .dialog .addstudent .btnbox button {
+    width: calc(0.45rem);
+    height: 100%;
+    border: 1px solid #dcdfe6;
   }
-  :global .warper .content .box .leftbox .btnbox .surebtn {
-    width: calc(0.65rem);
-    height: calc(0.36rem);
-    border: 0;
-    background: #0076ff;
-    color: #fff;
-    border-radius: 4px;
-  }
-  :global .warper .content .box .rightbox {
-    width: calc(4.83rem);
-    height: calc(4.2rem);
+  :global .warper .dialog .addstudent .btnbox button:nth-child(1) {
     border-radius: 4px 4px 4px 4px;
-    background-color: white;
-    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.2);
-    padding: 0 calc(0.22rem);
-    padding: calc(0.2rem) calc(0.6rem);
+    border: 1px solid #dcdfe6;
+    background: #fff;
+    margin-right: calc(0.05rem);
   }
-  :global .warper .content .box .rightbox .tit {
-    margin: calc(0.24rem) 0 calc(0.35rem) calc(0.24rem);
-    margin-left: -30px;
-  }
-  :global .warper .content .box .rightbox p {
-    width: 70%;
-    margin: 0 auto;
-    display: flex;
-    margin-bottom: calc(0.1rem);
-    margin-top: calc(0.1rem);
-  }
-  :global .warper .content .box .rightbox p span {
-    flex: 1;
-  }
-  :global .warper .content .box .rightbox p span input {
-    width: 100%;
-    height: calc(0.35rem);
-  }
-  :global .warper .content .box .rightbox p span textarea {
-    width: 100%;
-    height: calc(0.8rem);
-  }
-  :global .warper .content .box .rightbox p b {
-    width: calc(0.8rem);
-  }
-  :global .warper .content .box .rightbox p b button {
-    width: 100%;
+  :global .warper .dialog .addstudent .btnbox button:nth-child(2) {
+    border-radius: 4px 4px 4px 4px;
+    color: #fff;
+    background-color: #e6f1fc;
+    border: 1px solid #a3d0fd;
   }
 }

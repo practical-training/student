@@ -1,18 +1,20 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import "./css/index.css";
 import echarts from "echarts";
-class Principal extends Component {
-  componentDidMount() {
-    // 基于准备好的dom，初始化echarts实例
+import { Switch } from "antd";
+import "antd/dist/antd.css";
+function Principal() {
+  let [option, changeOption] = useState([]);
+  let [showgrade, setShowgrade] = useState(false);
+  let [echartsType, setechartsType] = useState("line");
+  useEffect(() => {
+    console.log(echartsType);
     var myChart = echarts.init(document.getElementById("main"));
-    // 绘制图表
     myChart.setOption({
       title: {
+        padding: 5,
         text: "未来一周气温变化",
         subtext: "纯属虚构"
-      },
-      tooltip: {
-        trigger: "axis"
       },
       legend: {
         data: ["最高气温", "最低气温"]
@@ -35,15 +37,22 @@ class Principal extends Component {
         data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
       },
       yAxis: {
-        type: "value",
+        axisLine: {
+          show: false
+        },
+        axisTick: {
+          show: false
+        },
         axisLabel: {
-          formatter: "{value} °C"
+          textStyle: {
+            color: "#999"
+          }
         }
       },
       series: [
         {
           name: "最高气温",
-          type: "line",
+          type: echartsType,
           data: [11, 11, 15, 13, 12, 13, 10],
           markPoint: {
             data: [
@@ -57,7 +66,7 @@ class Principal extends Component {
         },
         {
           name: "最低气温",
-          type: "line",
+          type: echartsType,
           data: [1, -2, 2, 5, 3, 2, 0],
           markPoint: {
             data: [{ name: "周最低", value: -2, xAxis: 1, yAxis: -1.5 }]
@@ -88,9 +97,15 @@ class Principal extends Component {
         }
       ]
     });
-  }
-  render() {
-    return (
+  }, [option, echartsType]);
+  let onChange = checked => {
+    if (checked) {
+      setechartsType("line");
+    } else {
+      setechartsType("bar");
+    }
+  };
+  return (
       <div className="warper">
         <header>重点关注学生考试成绩统计图</header>
         <div className="content">
@@ -98,6 +113,9 @@ class Principal extends Component {
             <span>切换班级</span>
             <span className="class">1703c</span>
             <span className="class">1703E</span>
+            <span>
+              <Switch defaultChecked onChange={onChange} />
+            </span>
           </div>
           <div className="add">
             <span>添加学生</span>
@@ -111,79 +129,55 @@ class Principal extends Component {
             <button className="addbtn">添加</button>
           </div>
           <div className="wire">
-            {/* 　<ReactEcharts option={option} className="" /> */}
-            <div id="main" style={{ width: 1000, height: 600 }}></div>
+            <div id="main"></div>
           </div>
           <div className="grade">
-            <span>添加成绩+</span>
+            <span
+              onClick={() => {
+                setShowgrade(true);
+              }}
+            >
+              添加成绩+
+            </span>
             <span>解决方案+</span>
             <span>查看和编辑该生所有成绩</span>
           </div>
-          <div className="piller">
-            <div className="pillerbox"></div>
-            <div className="grade">
-              <span>添加成绩+</span>
-              <span>解决方案+</span>
-              <span>查看和编辑该生所有成绩</span>
-            </div>
-          </div>
-          {/* <div className="box">
-            <div className="leftbox">
-              <p className="tit">新添成绩--xx同学</p>
-              <div className="iptbox">
-                <p>
-                  <input type="text" />
-                  <button>昨天</button>
-                </p>
-                <p>
-                  <span>技能</span> <input type="text" placeholder="数字" />
-                </p>
-                <p>
-                  <span>理论</span>
-                  <input type="text" placeholder="0-100之间数字" />
-                </p>
-              </div>
-              <p className="btnbox">
-                <button className="clearbtn">取消</button>
-                <button className="surebtn">确定</button>
-              </p>
-            </div>
-            <div className="rightbox">
-              <p className="tit">新添分析--xx同学</p>
-
-              <p className="time">
-                <span>
-                  <input type="text" />
-                </span>
-                <b>
-                  <button>昨天</button>
-                </b>
-              </p>
-
-              <p>
-                <b>分析</b>
-                <span>
-                  <textarea name="" id="" cols="30" rows="8"></textarea>
-                </span>
-              </p>
-
-              <p>
-                <b>解决方案</b>
-                <span>
-                  <textarea name="" id="" cols="30" rows="10"></textarea>
-                </span>
-              </p>
-
-              <p className="btnbox">
-                <span></span>
-                <button className="clearbtn">取消</button>
-                <button className="surebtn">确定</button>
-              </p>
-            </div>
-          </div> */}
         </div>
+        {showgrade ? (
+        <div className="dialog">
+          <div className="addstudent">
+            <p className="tit">新添成绩--xx同学</p>
+            <div className="iptbox">
+              <p>
+                <input type="text" />
+                <span>昨天</span>
+              </p>
+              <p>
+                <span>技能</span> <input type="text" placeholder="数字" />
+              </p>
+              <p>
+                <span>理论</span>
+                <input type="text" placeholder="0-100之间数字" />
+              </p>
+            </div>
+            <p className="btnbox">
+              <button
+                className="clearbtn"
+                onClick={() => {
+                  setShowgrade(false);
+                }}
+              >
+                取消
+              </button>
+              <button className="surebtn">确定</button>
+            </p>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
       </div>
-    );
-  }
+     
+  );
 }
 export default Principal;

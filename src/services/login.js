@@ -10,3 +10,4 @@ export const register = params => {
   let url = "/api/emstu/teacher/register";
   return request.post(url, params);
 };
+

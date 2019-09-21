@@ -3,6 +3,8 @@ import { Router, Route, Switch, Redirect } from "dva/router";
 import Login from "./routes/login";
 import Principal from "./routes/principal";
 import Charts from "./routes/charts"
+import Recordlists from "./routes/recordlists/recordlists";
+
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
@@ -10,10 +12,10 @@ function RouterConfig({ history }) {
         <Route path="/login" exact component={Login} />
         <Route path="/principal" component={Principal}></Route>
         <Route path="/charts" component={Charts}></Route>
+        <Route path="/recordlists" component={Recordlists}></Route>
         <Redirect from="/" to="/login" />
       </Switch>
     </Router>
   );
 }
-
-export default RouterConfig;
+export default RouterConfig

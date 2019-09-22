@@ -18,10 +18,76 @@
   }
   .nav {
     height: calc(2.01rem);
-    line-height: calc(0.2rem);
-    text-align: center;
     margin-top: calc(0.21rem);
-    border: 1px solid rgba(187, 187, 187, 1);
+    border: calc(0.01rem) solid rgba(187, 187, 187, 1);
+    font-size: calc(0.12rem);
+    overflow: hidden;
+  }
+  .tabclass {
+    height: 75%;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .tabclass .choose{
+    width: 20%;
+    height: 100%;
+    padding: calc(0.05rem) 0 0 calc(0.05rem)
+  }
+  .list {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .list span {
+    height: calc(0.25rem);
+    line-height: calc(0.25rem);
+    background-color: rgba(230, 241, 252, 1);
+    text-align: center;
+    border: 1px solid rgba(163, 208, 253, 1);
+    font-size: calc(0.10rem);
+    margin:calc(0.03rem);
+    padding:0 calc(0.05rem);
+    border-radius: calc(0.05rem);
+  }
+  .list span.active {
+    background-color: rgba(24, 144, 255, 1);
+    color: #fff;
+  }
+  .bot {
+    height: 25%;
+    display: flex;
+    align-items: center;
+  }
+  .bot .choose {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding:  0 calc(0.15rem);
+  }
+ 
+  .botPro {
+    width: 50%;
+    display: flex;
+    align-items: center;
+  }
+  .botPro span {
+    height: calc(0.4rem);
+    line-height: calc(0.4rem);
+    font-size: calc(0.10rem)
+  }
+  .switch {
+    width: 30%;
+    height: calc(0.4rem);
+    display: flex;
+    align-items: center;
+    font-size: calc(0.10rem)
+  }   
+  #president{
+    font-size: calc(0.1rem)
   }
 }
 /*大屏幕，或者宽屏*/
@@ -43,7 +109,7 @@
     border: 1px solid rgba(187, 187, 187, 1);
   }
   .nav {
-    height: 202px;
+    height: 220px;
     line-height: 20px;
     margin-top: 21px;
     border: 1px solid rgba(187, 187, 187, 1);
@@ -53,22 +119,32 @@
   .tabclass {
     height: 75%;
     display: flex;
+    box-sizing: border-box;
   }
   .bot {
     height: 25%;
     display: flex;
+    align-items: center;
   }
-  .choose {
+  .tabclass .choose {
     width: 8%;
     height: 100%;
-    padding: 20px;
     display: flex;
+    padding: 15px;
+  }
+  .bot .choose {
+    width: 8%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
   }
   .list {
     width: 92%;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
   }
   .list span {
     width: 94px;
@@ -99,5 +175,8 @@
     height: 40px;
     display: flex;
     align-items: center;
+  }
+  #president{
+    font-size: 14px;
   }
 }

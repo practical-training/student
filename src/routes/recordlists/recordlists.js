@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'dva';
 import styles from './css/recordlists.css';
 import { Table } from 'antd';
-import { node } from 'prop-types';
-import axios from 'axios'
 import { recordlists} from "../../services/recordlists/recordlists";
 
 let handleBtn = async () => {

@@ -4,7 +4,7 @@ import echarts from "echarts";
 import { Switch } from "antd";
 import "antd/dist/antd.css";
 function Principal() {
-  let [option, changeOption] = useState([]);
+  let [option] = useState([]);
   let [showgrade, setShowgrade] = useState(false);
   let [echartsType, setechartsType] = useState("line");
   useEffect(() => {

@@ -224,6 +224,85 @@
     background-color: #e6f1fc;
     border: 1px solid #a3d0fd;
   }
+  :global .dialog .analyzebox {
+    width: 480px;
+    height: 420px;
+    border-radius: 4px 4px 4px 4px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 24px;
+  }
+  :global .dialog .analyzebox .tit {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  :global .dialog .analyzebox .iptbox {
+    width: 100%;
+    height: 273px;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+  }
+  :global .dialog .analyzebox .iptbox p:nth-child(1) {
+    width: 100%;
+    height: 30px;
+    display: flex;
+  }
+  :global .dialog .analyzebox .iptbox p:nth-child(1) span {
+    width: 80px;
+    height: 100%;
+    border-radius: 4px 4px 4px 4px;
+    background-color: #e6f1fc;
+    border: 1px solid #a3d0fd;
+  }
+  :global .dialog .analyzebox .iptbox p:nth-child(1) input {
+    flex: 1;
+  }
+  :global .dialog .analyzebox .iptbox p:nth-child(2), :global .dialog .analyzebox .iptbox p:nth-child(3) {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  :global .dialog .analyzebox .iptbox p:nth-child(2) span, :global .dialog .analyzebox .iptbox p:nth-child(3) span {
+    width: 80px;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  :global .dialog .analyzebox .iptbox p:nth-child(2) textarea, :global .dialog .analyzebox .iptbox p:nth-child(3) textarea {
+    flex: 1;
+    height: 100%;
+  }
+  :global .dialog .analyzebox .btnbox {
+    width: 100%;
+    height: 36px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  :global .dialog .analyzebox .btnbox button {
+    width: 65px;
+    height: 100%;
+    border: 1px solid #dcdfe6;
+  }
+  :global .dialog .analyzebox .btnbox button:nth-child(1) {
+    border-radius: 4px 4px 4px 4px;
+    border: 1px solid #dcdfe6;
+    background: #fff;
+    margin-right: 10px;
+  }
+  :global .dialog .analyzebox .btnbox button:nth-child(2) {
+    border-radius: 4px 4px 4px 4px;
+    color: #fff;
+    background-color: #e6f1fc;
+    border: 1px solid #a3d0fd;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -376,6 +455,86 @@
     position: fixed;
     top: 0;
     left: 0;
+  }
+  :global .warper .dialog .analyzebox {
+    width: calc(2.8rem);
+    height: calc(2.5rem);
+    border-radius: 4px 4px 4px 4px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: calc(0.12rem);
+  }
+  :global .warper .dialog .analyzebox .tit {
+    margin-bottom: calc(0.1rem);
+    text-align: left;
+  }
+  :global .warper .dialog .analyzebox .iptbox {
+    width: 100%;
+    height: calc(1.6rem);
+    padding: 0 calc(0.15rem);
+    display: flex;
+    flex-direction: column;
+  }
+  :global .warper .dialog .analyzebox .iptbox p:nth-child(1) {
+    width: 100%;
+    height: calc(0.28rem);
+    display: flex;
+  }
+  :global .warper .dialog .analyzebox .iptbox p:nth-child(1) span {
+    width: calc(0.4rem);
+    height: 100%;
+    border-radius: 4px 4px 4px 4px;
+    background-color: #e6f1fc;
+    border: 1px solid #a3d0fd;
+  }
+  :global .warper .dialog .analyzebox .iptbox p:nth-child(1) input {
+    flex: 1;
+    border: 1px solid #dcdfe6;
+  }
+  :global .warper .dialog .analyzebox .iptbox p:nth-child(2), :global .warper .dialog .analyzebox .iptbox p:nth-child(3) {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  :global .warper .dialog .analyzebox .iptbox p:nth-child(2) span, :global .warper .dialog .analyzebox .iptbox p:nth-child(3) span {
+    width: calc(0.4rem);
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  :global .warper .dialog .analyzebox .iptbox p:nth-child(2) textarea, :global .warper .dialog .analyzebox .iptbox p:nth-child(3) textarea {
+    flex: 1;
+    height: 100%;
+  }
+  :global .warper .dialog .analyzebox .btnbox {
+    width: 100%;
+    height: calc(0.3rem);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  :global .warper .dialog .analyzebox .btnbox button {
+    width: calc(0.33rem);
+    height: 100%;
+    border: 1px solid #dcdfe6;
+  }
+  :global .warper .dialog .analyzebox .btnbox button:nth-child(1) {
+    border-radius: 4px 4px 4px 4px;
+    border: 1px solid #dcdfe6;
+    background: #fff;
+    margin-right: 10px;
+  }
+  :global .warper .dialog .analyzebox .btnbox button:nth-child(2) {
+    border-radius: 4px 4px 4px 4px;
+    color: #fff;
+    background-color: #e6f1fc;
+    border: 1px solid #a3d0fd;
   }
   :global .warper .dialog .addstudent {
     border-radius: 4px 4px 4px 4px;

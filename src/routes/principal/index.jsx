@@ -3,18 +3,31 @@ import "./css/index.css";
 import echarts from "echarts";
 import { Switch } from "antd";
 import "antd/dist/antd.css";
+import Mock from "mockjs";
 function Principal() {
   let [option] = useState([]);
   let [showgrade, setShowgrade] = useState(false);
   let [echartsType, setechartsType] = useState("line");
+  let [showanalyze, setShowanalyze] = useState(false);
   useEffect(() => {
-    console.log(echartsType);
+    let timedata = [];
+    let gradedata=[]
+    let data=[]
+    for (var i = 0; i < 12; i++) {
+      let time = Mock.mock('@date("MM-dd")');
+      timedata.push(time);
+      let grad =Mock.mock({
+        "grade|20-70":100,
+      });
+      gradedata.push(grad)
+    }
+   gradedata.map((item)=>data.push(item.grade))
     var myChart = echarts.init(document.getElementById("main"));
     myChart.setOption({
       title: {
         padding: 5,
-        text: "未来一周气温变化",
-        subtext: "纯属虚构"
+        text: "XX同学的日周考成绩统计图",
+        subtext: "仅供参考"
       },
       legend: {
         data: ["最高气温", "最低气温"]
@@ -34,7 +47,7 @@ function Principal() {
       xAxis: {
         type: "category",
         boundaryGap: false,
-        data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
+        data: timedata
       },
       yAxis: {
         axisLine: {
@@ -53,7 +66,7 @@ function Principal() {
         {
           name: "最高气温",
           type: echartsType,
-          data: [11, 11, 15, 13, 12, 13, 10],
+          data,
           markPoint: {
             data: [
               { type: "max", name: "最大值" },
@@ -106,44 +119,50 @@ function Principal() {
     }
   };
   return (
-      <div className="warper">
-        <header>重点关注学生考试成绩统计图</header>
-        <div className="content">
-          <div className="tabclass">
-            <span>切换班级</span>
-            <span className="class">1703c</span>
-            <span className="class">1703E</span>
-            <span>
-              <Switch defaultChecked onChange={onChange} />
-            </span>
-          </div>
-          <div className="add">
-            <span>添加学生</span>
-            <input type="text" placeholder="输入姓名" className="useript" />
-            <input type="text" placeholder="末位次数" className="countipt" />
-            <input
-              type="text"
-              placeholder="结对子，帮扶对象"
-              className="helpipt"
-            />
-            <button className="addbtn">添加</button>
-          </div>
-          <div className="wire">
-            <div id="main"></div>
-          </div>
-          <div className="grade">
-            <span
-              onClick={() => {
-                setShowgrade(true);
-              }}
-            >
-              添加成绩+
-            </span>
-            <span>解决方案+</span>
-            <span>查看和编辑该生所有成绩</span>
-          </div>
+    <div className="warper">
+      <header>重点关注学生考试成绩统计图</header>
+      <div className="content">
+        <div className="tabclass">
+          <span>切换班级</span>
+          <span className="class">1703c</span>
+          <span className="class">1703E</span>
+          <span>
+            <Switch defaultChecked onChange={onChange} />
+          </span>
         </div>
-        {showgrade ? (
+        <div className="add">
+          <span>添加学生</span>
+          <input type="text" placeholder="输入姓名" className="useript" />
+          <input type="text" placeholder="末位次数" className="countipt" />
+          <input
+            type="text"
+            placeholder="结对子，帮扶对象"
+            className="helpipt"
+          />
+          <button className="addbtn">添加</button>
+        </div>
+        <div className="wire">
+          <div id="main"></div>
+        </div>
+        <div className="grade">
+          <span
+            onClick={() => {
+              setShowgrade(true);
+            }}
+          >
+            添加成绩+
+          </span>
+          <span
+            onClick={() => {
+              setShowanalyze(true);
+            }}
+          >
+            解决方案+
+          </span>
+          <span>查看和编辑该生所有成绩</span>
+        </div>
+      </div>
+      {showgrade ? (
         <div className="dialog">
           <div className="addstudent">
             <p className="tit">新添成绩--xx同学</p>
@@ -176,8 +195,41 @@ function Principal() {
       ) : (
         ""
       )}
-      </div>
-     
+      {showanalyze ? (
+        <div className="dialog">
+          <div className="analyzebox">
+            <div className="tit">新添分析XX同学</div>
+            <div className="iptbox">
+              <p>
+                <input />
+                <span>昨天</span>
+              </p>
+              <p>
+                <span>分析</span>
+                <textarea name="" id=""></textarea>
+              </p>
+              <p>
+                <span>解决方案</span>
+                <textarea name="" id=""></textarea>
+              </p>
+            </div>
+            <div className="btnbox">
+              <button
+                className="clearbtn"
+                onClick={() => {
+                  setShowanalyze(false);
+                }}
+              >
+                取消
+              </button>
+              <button className="surebtn">确定</button>
+            </div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+    </div>
   );
 }
 export default Principal;
